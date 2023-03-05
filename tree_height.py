@@ -22,7 +22,7 @@ def compute_height(n, parents):
         while num != -1:
           num = parents[num]
           height = height+1
-        num = 0
+        num = parents[i]
         current[i] = height
 
     for i in range(n):
