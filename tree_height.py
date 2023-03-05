@@ -31,14 +31,14 @@ def compute_height(n, parents):
 
 def main():
     # implement input form keyboard and from files
-    type = input()
-    if type[0] == "I":
+    tips = input()
+    if tips[0] == "I":
       n = int(input())
       numbers = input()
       parents = list(map(int, numbers.split()))
       print(compute_height(n, parents))
       
-    elif type[0] == "F":
+    elif tips[0] == "F":
       file = input()
       f = open("./test/" + file, "r")
       n = int(f.readline())
