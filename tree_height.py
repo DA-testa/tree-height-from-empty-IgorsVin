@@ -9,7 +9,6 @@ def compute_height(n, parents):
     # Write this function
     max_height = 0
     current = numpy.array(n,int)
-    height = 0
     # Your code here
     for i in range(n):
        num = i
@@ -34,7 +33,7 @@ def main():
     # implement input form keyboard and from files
     type = input()
     if type[0] == "I":
-      n = input()
+      n = int(input())
       numbers = input()
       parents = list(map(int, numbers.split()))
       print(compute_height(n, parents))
