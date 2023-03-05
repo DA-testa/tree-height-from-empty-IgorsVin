@@ -44,11 +44,10 @@ def main():
       
     elif type[0] == "F":
       file = input()
-       if file[0] != "a":
-        f = open("./test/" + file, "r")
-        n = int(f.readline())
-        parents = list(map(int, f.readline().split()))
-        print(compute_height(n, parents))
+      f = open("./test/" + file, "r")
+      n = int(f.readline())
+      parents = list(map(int, f.readline().split()))
+      print(compute_height(n, parents))
     # let user input file name to use, don't allow file names with letter a
     # account for github input inprecision
     
