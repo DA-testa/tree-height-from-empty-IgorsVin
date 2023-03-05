@@ -37,10 +37,7 @@ def main():
       n = input()
       numbers = input()
       parents = list(map(int, numbers.split()))
-      if parents.size == n :
-        print(compute_height(n, parents))
-      else:
-        print("wrong input")
+      print(compute_height(n, parents))
       
     elif type[0] == "F":
       file = input()
