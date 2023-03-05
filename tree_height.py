@@ -8,19 +8,19 @@ import numpy
 def compute_height(n, parents):
     # Write this function
     max_height = 0
-    current = numpy.array(n,int)
+    current = numpy.zeros(n,int)
     # Your code here
     for i in range(n):
-       num = i
-       height = 0
-       while num != -1:
-          if current[num]==0:
-            height = height+1
-          else:
-            height = height + current[i]
-            pass
-          num = int(parents[num])
-       current[i] = height
+      height=0
+      num=i
+      while num != -1:
+        if current[num]==0:
+          height = height+1
+        else:
+          height = height+current[i]
+          pass
+        num = int(parents[num])
+      current[i]=height
 
     for i in range(n):
       if current[i] > max_height:
