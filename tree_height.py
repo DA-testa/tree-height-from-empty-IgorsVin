@@ -18,7 +18,7 @@ def compute_height(n, parents):
           height = height+1
         else:
           height = height+current[num]
-          pass
+          break
         num = int(parents[num])
       current[i]=height
 
