@@ -12,18 +12,16 @@ def compute_height(n, parents):
     height = 0
     # Your code here
     for i in range(n):
-      if parents[i]==-1:
-        current[i] = 1
-      elif current[parents[i]]>0:
-        current[i] = current[parents[i]]+1
-      else:
-        num = parents[i]
-        height = 1
-        while num != -1:
-          num = parents[num]
-          height = height+1
-        num = parents[i]
-        current[i] = height
+       num = i
+       height = 0
+       while num != -1:
+          if current[num]==0:
+            height = height+1
+          else:
+            height = height + current[i]
+            pass
+          num = int(parents[num])
+       current[i] = height
 
     for i in range(n):
       if current[i] > max_height:
@@ -46,10 +44,11 @@ def main():
       
     elif type[0] == "F":
       file = input()
-      f = open("./test/" + file, "r")
-      n = int(f.readline())
-      parents = list(map(int, f.readline().split()))
-      print(compute_height(n, parents))
+       if file[0] != "a":
+        f = open("./test/" + file, "r")
+        n = int(f.readline())
+        parents = list(map(int, f.readline().split()))
+        print(compute_height(n, parents))
     # let user input file name to use, don't allow file names with letter a
     # account for github input inprecision
     
